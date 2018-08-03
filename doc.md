@@ -1,9 +1,9 @@
-Sharding Research Synopsis
-Random Beacon Chain, Shard P2P, and Layer-1 Scaling for Ethereum
-Status: draft
-Author: Raul Jordan
-Prysmatic Labs
-Last Updated: July 4, 2018
+# Sharding Research Synopsis
+# Random Beacon Chain, Shard P2P, and Layer-1 Scaling for Ethereum
+#### Status: draft
+#### Author: Raul Jordan
+#### Prysmatic Labs
+#### Last Updated: July 4, 2018
 
 This doc will summarize the latest discussions and roadmap updates around integrating Casper/Sharding through a beacon chain and what it means for Ethereum's end-game. 
 
@@ -42,7 +42,7 @@ There are a few important traits we will include in this sidechain construct tha
 - Ability to store verifiable metadata of occurrences across shards (we refer to this information as a cross-link)
 
 In Vitalik Buterin's [words](https://notes.ethereum.org/SCIg8AH5SA-O4C1G1LYZHQ?both):
-> A cross-link is a special type of transaction that says “here is the hash of some recent block on shard X. Here are signatures from at least 2/3 of some randomly selected sample of M validators (eg. M = 1024) that attest to the validity of the cross-link”. Every shard (eg. there might be 4000 shards total) is itself a PoS chain, and the shard chains are where the transactions and accounts will be stored. The cross-links serve to “confirm” segments of the shard chains into the main chain, and are also the primary way through which the different shards will be able to talk to each other.
+> A cross-link is a special type of transaction that says â€œhere is the hash of some recent block on shard X. Here are signatures from at least 2/3 of some randomly selected sample of M validators (eg. M = 1024) that attest to the validity of the cross-linkâ€. Every shard (eg. there might be 4000 shards total) is itself a PoS chain, and the shard chains are where the transactions and accounts will be stored. The cross-links serve to â€œconfirmâ€ segments of the shard chains into the main chain, and are also the primary way through which the different shards will be able to talk to each other.
 > 
 
 The main purpose of beacon chain is to handle these shard cross-links as well as the set of validators that are locked into the system. This initial set is seeded by users burning 32ETH into a contract on the mainchain and specifying their public key, which can then be verified by the beacon chain which interacts with this contract.
@@ -113,7 +113,7 @@ However, the current spec for the beacon chain mentions a fixed number for the S
 
 The entire reshuffling mechanism was revamped given this fixed shard_count number. In the current beacon chain spec, it is mentioned that
 
-> For shard crosslinks, the process is somewhat more complicated. First, we choose the set of shards active during each epoch. We want to target some fixed number of notaries per crosslink, but this means that since there is a fixed number of shards and a variable number of validators, we won’t be able to go through every shard in every epoch. Hence, we first need to select which shards we will be crosslinking in some given epoch
+> For shard crosslinks, the process is somewhat more complicated. First, we choose the set of shards active during each epoch. We want to target some fixed number of notaries per crosslink, but this means that since there is a fixed number of shards and a variable number of validators, we wonâ€™t be able to go through every shard in every epoch. Hence, we first need to select which shards we will be crosslinking in some given epoch
 
 Additionally, the current spec forces casper validators to also be sharding validators, which enforces greater security and takes advantage of the enshrined randomness + full PoS properties of the beacon chain.
 
